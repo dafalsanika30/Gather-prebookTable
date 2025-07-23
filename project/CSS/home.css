@@ -1,0 +1,415 @@
+*{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+  }
+  
+  nav {
+    background-color: black;
+    color: white;
+    width: 1900px;
+  }
+  
+  .nav-link {
+    color: white;
+    font-size: 23px;
+    text-decoration: none; /* Ensure text decoration is never applied */
+  }
+  
+  /* Disable hover effect completely for nav-links */
+  .nav-link:hover {
+    color: lightgray; /* Prevent color change on hover */
+    text-decoration: overline; /* Prevent text-decoration changes like overline */
+  }
+
+  .btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+  }
+  
+  /* Styles when both nav-link and btn are used */
+  /* Styles for nav-link and btn combined */
+    .nav-link.btn {
+    color: black;  /* Text color */
+    text-decoration: none; /* Remove underline */
+    font-size: 18px; /* Font size */
+    padding: 10px 20px; /* Padding */
+    border-radius: 5px; /* Rounded corners */
+    background-color: white;
+  }
+  
+  .nav-link.btn:hover {
+    background-color: gray; /* Background color on hover */
+    color:white; /* Change text color on hover */
+  }
+  
+  .nav-link.btn:focus {
+    outline: none; /* Remove outline on focus */
+  }
+  
+  
+  /* Optional: If you have specific styles for active or clicked links */
+    
+  .navbar-brand {
+    color: white;
+    font-size: 30px; /* Adjust this value to your desired font size */
+  }
+  
+
+
+  .image{
+    top:75px;
+    position: relative;
+    background: black;
+    text-align: center;
+    height: 380px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    object-fit: contain;
+  }
+  /* General section styling */
+  section.image {
+      top: 75px;
+      position: relative;
+      background: black;
+      text-align: center;
+      height: 380px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      object-fit: contain;
+  }
+
+  .searchtext {
+      width: 90%;
+      margin: 0 auto;
+  }
+
+  .searchtext .text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 70%;
+      max-width: 1110px;
+      z-index: 9;
+  }
+
+  .searchtext .text h1 {
+      color: #fff;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+  }
+
+  .searchtext .text h1 span {
+      color: rgb(234, 227, 227);
+      padding-left: 10px;
+  }
+
+  /* Search Bar */
+
+  .restsearch {
+    display: flex;               /* Align items in a row */
+    align-items: center;         /* Vertically center items */
+    justify-content: center;     /* Center the items horizontally */
+    gap: 10px;                   /* Add some space between the input and button */
+}
+
+    .restsearch input {
+        width: 70%;                  /* Adjust the width of the input */
+        padding: 8px;                /* Add some padding for better appearance */
+    }
+
+    .restsearch button {
+        padding: 5px 10px;           /* Add padding to the button */
+        background-color: black;      /* Change the background color */
+        color: white;                /* Text color for the button */
+        border: none;                /* Remove button border */
+        cursor: pointer;            /* Change cursor on hover */
+    }
+
+    
+
+  .restsearch {
+      width: 100%;
+      box-shadow: 2px 4px 5px 0 rgba(204, 199, 198, 0.4);
+      border-radius: 5px;
+      background: #fff;
+      padding: 0 1rem 0 1.5rem;
+      display: flex;
+      align-items: center;
+      height: 60px;
+      position: relative;
+  }
+
+    .icon{
+      width: 30px; /* Adjust the size of the icon */
+      height: 30px; /* Adjust the size of the icon */
+      margin-right: 1rem; /* Space between icon and input field */
+    }
+
+  .search-icon {
+      width: 30px; /* Adjust the size of the icon */
+      height: 30px; /* Adjust the size of the icon */
+      margin-right: 1rem; /* Space between icon and input field */
+  }
+
+  .restsearch input[type="text"] {
+      width: 100%;
+      margin: 0 2rem 0 1rem;
+      font-size: 1.5rem;
+      padding: 0 0.5rem;
+      height: 38px;
+      border: none;
+  }
+
+  .searchbtn {
+      background-color: black;
+      color: #fff;
+      font-size: 27px;
+      border-radius: 6px;
+      width: 20%;
+  }
+  
+
+
+
+
+  /* Cards Section */
+  .cards {
+      height: 120%;
+      width: 90%;
+      margin-top: 100px;
+      margin-bottom: 100px;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 10px;
+      border-color: black;
+      color: black;
+      background-color: lightgray;
+      padding: 10px;
+      box-shadow: 2px 4px 5px 0 rgba(204, 199, 198, 0.4);
+  }
+
+  .cards h1 {
+      font-size: xx-large;
+      margin-top: 10px;
+      margin-left: 20px;
+      margin-bottom: 0;
+      display: inline;
+  }
+
+  .card {
+      margin-top: 0;
+      margin: 20px;
+      display: flex;
+      box-shadow: 2px 4px 5px 0 rgba(122, 119, 119, 0.4);
+  }
+
+  .card-img-top {
+      border-bottom: 5px solid black;
+  }
+
+        /* Dropdown Menu Styling */
+  .dropdown-menu {
+      background-color: black;
+      border: none;
+      display: none; /* Initially hidden */
+  }
+
+  .dropdown-item {
+      color: white;    
+      font-size: 18px;
+  }
+
+  .dropdown-item:hover {
+      background-color: grey;
+  }
+
+  /* Show dropdown on hover */
+  .nav-item.dropdown:hover .dropdown-menu {
+      display: block;
+      
+  }
+
+  /* Change hamburger icon color to white */
+.navbar-toggler-icon {
+    filter: invert(1); /* Inverts the color to white */
+}
+
+  /* Login/Sign Up Button Styling */
+  .navbar-nav .dropdown-toggle {
+      background-color: white;
+      color: black;
+      border: none;
+  }
+
+  .dropdown-toggle::after {
+      display: none; /* Hide the default dropdown arrow (inverted triangle) */
+  }
+
+ 
+/* Footer Styling */
+footer {
+    background-color: #212529;
+    color: #ffffff;
+    padding: 40px 0;
+    width: 100%;
+}
+
+footer h5 {
+    font-size: 20px; /* Increased font size */
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+footer p, footer li {
+    font-size: 16px; /* Increased font size */
+    color: #cccccc;
+}
+
+footer a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px; /* Increased font size */
+}
+
+footer a:hover {
+    color: #cccccc;
+    text-decoration: underline;
+}
+
+footer .social-icons img {
+    width: 30px;
+    height: 30px;
+}
+
+footer .social-icons a {
+    margin-right: 10px;
+}
+
+footer .list-unstyled {
+    padding-left: 0;
+    list-style-type: none;
+}
+
+footer .bi {
+    margin-right: 10px;
+    color: #ffffff;
+}
+
+footer .text-center {
+    margin-top: 20px;
+    font-size: 15px; /* Increased font size */
+    color: #cccccc;
+}
+
+/* Default styling */
+.see-more-link {
+    display: block;
+    text-align: right;
+    margin-top: 20px;
+    color: black;
+    text-decoration: none;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 767px) {
+    .see-more-link {
+        margin-left: 0; /* Remove any left margin */
+        font-size: 14px; /* Adjust font size */
+        padding: 10px 0; /* Add some padding for clickability */
+    }
+}
+
+/* Larger screens (above 767px) */
+@media (min-width: 768px) {
+    .see-more-link {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    .navbar-nav{
+        margin: auto;
+    }
+    .card {
+        margin-bottom: 20px;
+    }
+
+    .searchtext .text h1 {
+        font-size: 2rem;
+    }
+
+    .searchtext .text h1 span {
+        font-size: 1.2rem;
+    }
+
+    .cards h1 {
+        font-size: 1.5rem;
+    }
+
+    .search-icon {
+        width: 25px;
+        height: 25px;
+    }
+
+    .restsearch input[type="text"] {
+        font-size: 1rem;
+    }
+
+    .searchbtn {
+        font-size: 1.8rem;
+    }
+
+    .navbar-nav .nav-item .nav-link {
+        font-size: 18px;
+    }
+
+    .dropdown-menu {
+        background-color: black;
+    }
+
+    .dropdown-item {
+        font-size: 16px;
+    }
+
+    .dropdown-item:hover {
+        background-color: grey;
+    }
+
+    footer .row > div {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    footer .social-icons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .searchtext .text h1 {
+        font-size: 1.5rem;
+    }
+
+    .searchtext .text h1 span {
+        font-size: 1.2rem;
+    }
+
+    .restsearch input[type="text"] {
+        font-size: 1.2rem;
+    }
+
+    .searchbtn {
+        width: 40%;
+        font-size: 1.5rem;
+    }
+
+    .card {
+        margin: 10px;
+    }
+}
+

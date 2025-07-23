@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Listing Form</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="Photos/dinner.png" type="image/png">
+    <link href="CSS/home.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(to bottom, #1d1d1d, #fafafa);
+            background-color: #f1eeee;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            margin: 0;
+            max-width: 60%;
+            height: auto;
+            padding: 1.5rem;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+        .error-message {
+            color: red;
+            font-size: 0.875rem;
+        }
+        .role-specific {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top" style="background-color: black; padding: 15px 15px; font-size: 15px; width: auto;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#" style="color: white;">
+                <img src="Photos/dinner.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+                Gather
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon" style="border-color: grey;"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="bookatable.html">Book a Table</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="aboutus.html">About Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-5">
+        <form action="signup.php" method="post"> 
+            <!-- Role Selection -->
+            <div class="mb-3">
+              <h3 class="text-center mb-1">Sign Up</h3>
+                <label for="role" class="form-label">Select Role</label>
+                <select class="form-control" id="role" required onchange="toggleFields()">
+                    <option value="">Select Role</option>
+                    <option value="restaurant">Restaurant</option>
+                    <option value="customer">Customer</option>
+                </select>
+            </div>
+
+            <!-- Customer Specific Fields -->
+            <div id="customerFields" class="role-specific">
+              <!-- First Row: Restaurant Name and Owner Name -->
+              <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="firstName" class="form-label">First Name</label>
+                    <input type="text" class="form-control" id="firstName" placeholder="Enter your First Name">
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="lastName" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" id="lastName" placeholder="Enter your Last Name">
+                </div>
+              </div>
+
+              <!-- Second Row: Email and Phone -->
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="mobileNumberCustomer" class="form-label">Mobile Number</label>
+                <input type="tel" id="mobileNumberCustomer" class="form-control" oninput="validateMobileNumber('mobileNumberCustomer', 'mobileErrorCustomer')" placeholder="Enter your Mobile Number">
+                <div id="mobileErrorCustomer" class="error-message"></div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="emailCustomer" class="form-label">Email</label>
+                <input type="email" id="emailCustomer" class="form-control" oninput="validateEmail('emailCustomer', 'emailErrorCustomer')" placeholder="Enter your Email">
+                <p id="emailErrorCustomer" class="error-message" style="display: none;">Invalid email format. Email must start with a letter and end with @gmail.com</p>
+              </div>
+            </div>
+
+              <!-- Third Row: Password -->
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="password" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="password"  placeholder="Enter your Password">
+                </div>
+              </div>
+
+            </div>
+            <!-- Restaurant -->
+            <div id="restaurantFields" class="role-specific">
+                <!-- First Row: Restaurant Name and Owner Name -->
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="restaurantName" class="form-label">Restaurant Name</label>
+                        <input type="text" class="form-control" id="restaurantName" placeholder="Enter restaurant name">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="address" class="form-label">Restaurant Address</label>
+                        <input type="text" class="form-control" id="address" placeholder="Enter address">
+                    </div>
+                </div>
+
+                <!-- Second Row: Email and Phone -->
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                      <label for="mobileNumberRestaurant" class="form-label">Mobile Number</label>
+                      <input type="tel" id="mobileNumberRestaurant" class="form-control" oninput="validateMobileNumber('mobileNumberRestaurant', 'mobileErrorRestaurant')" placeholder="Enter your Mobile Number">
+                      <div id="mobileErrorRestaurant" class="error-message"></div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="emailRestaurant" class="form-label">Email</label>
+                        <input type="email" id="emailRestaurant" class="form-control" oninput="validateEmail('emailRestaurant', 'emailErrorRestaurant')" placeholder="Enter your Email">
+                        <p id="emailErrorRestaurant" class="error-message" style="display: none;">Invalid email format. Email must start with a letter and end with @gmail.com</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                      <label for="rpassword" class="form-label">Password</label>
+                      <input type="password" class="form-control" id="rpassword"  placeholder="Enter your Password" required>
+                    </div>
+                </div>
+
+                <!-- Third Row: Cuisine Type and Address -->
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="cuisineType" class="form-label">Cuisine Type</label>
+                        <input type="text" class="form-control" id="cuisineType" placeholder="e.g., Italian, Indian, Chinese">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label for="features" class="form-label">Features</label>
+                      <input type="text" class="form-control" id="features" placeholder="e.g., Wi-Fi, parking, live music">
+                  </div>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <input type="submit" class="btn btn-dark w-100" value="Sign Up">
+            <div class="text-center mt-2">
+                <a href="login.html">Already a User? Login</a>
+            </div>
+        </form>
+    </div>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+
+    <!-- JavaScript to toggle visibility of restaurant fields -->
+    <script>
+        function toggleFields() {
+            var selectedRole = document.getElementById('role').value;
+            var restaurantFields = document.getElementById('restaurantFields');
+            var customerFields = document.getElementById('customerFields');
+            var restaurantName = document.getElementById('restaurantName');
+            var address = document.getElementById('address');
+            var cuisineType = document.getElementById('cuisineType');
+            var features = document.getElementById('features');
+            
+            var firstName = document.getElementById('firstName');
+            var lastName = document.getElementById('lastName');
+            var mobileNumber = document.getElementById('mobileNumberCustomer');
+            var emailCustomer = document.getElementById('emailCustomer');
+            var password = document.getElementById('password');
+            var rpassword = document.getElementById('rpassword');
+
+            // Reset all required attributes
+            restaurantFields.style.display = 'none';
+            customerFields.style.display = 'none';
+
+            // Remove required attributes for both roles
+            restaurantName.removeAttribute('required');
+            address.removeAttribute('required');
+            cuisineType.removeAttribute('required');
+            features.removeAttribute('required');
+            
+            firstName.removeAttribute('required');
+            lastName.removeAttribute('required');
+            mobileNumber.removeAttribute('required');
+            emailCustomer.removeAttribute('required');
+            password.removeAttribute('required');
+            rpassword.removeAttribute('required');
+            
+            // Apply required fields based on role selection
+            if (selectedRole === 'restaurant') {
+                restaurantFields.style.display = 'block';
+                restaurantName.setAttribute('required', 'true');
+                address.setAttribute('required', 'true');
+                cuisineType.setAttribute('required', 'true');
+                features.setAttribute('required', 'true');
+                rpassword.setAttribute('required', 'true');
+            } 
+            else if (selectedRole === 'customer') {
+                customerFields.style.display = 'block';
+                firstName.setAttribute('required', 'true');
+                lastName.setAttribute('required', 'true');
+                mobileNumber.setAttribute('required', 'true');
+                emailCustomer.setAttribute('required', 'true');
+                password.setAttribute('required', 'true');
+            }
+        }
+
+        function validateMobileNumber(id, errorId) {
+            const mobileNumber = document.getElementById(id);
+            const mobileError = document.getElementById(errorId);
+
+            if (mobileNumber.value.length !== 10 || isNaN(mobileNumber.value)) {
+                mobileError.textContent = "Invalid number! Enter a 10-digit number.";
+            } else {
+                mobileError.textContent = ""; // Clear the error message if valid
+            }
+        }
+
+        function validateEmail(id, errorId) {
+            const email = document.getElementById(id).value;
+            const emailError = document.getElementById(errorId);
+
+            // Regular expression: starts with a letter, ends with @gmail.com
+            const emailPattern = /^[A-Za-z][\w.-]*@gmail\.com$/;
+
+            if (emailPattern.test(email)) {
+                emailError.style.display = "none";
+            } else {
+                emailError.style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+</html>

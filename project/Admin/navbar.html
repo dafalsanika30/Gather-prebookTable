@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../CSS/dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        function confirmLogout() {
+            // Show confirmation message
+            if (confirm("Are you sure you want to log out?")) {
+                // Redirect to logout.php if confirmed
+                window.location.href = "logout.php";
+            }
+        }
+    </script>
+    
+</head>
+           
+            <!-- Sidebar -->
+<nav class="col-md-2 sidebar d-flex flex-column">
+    <h4 class="text-center">Admin Dashboard</h4>
+    <a href="admin.php">Dashboard</a>
+    <a href="users.php">Manage Users</a>
+    <a href="rest.php">Manage Restaurants</a>
+    <a href="reservation.php">Reservations</a>
+    <a href="feedback.php">Feedback</a>
+    <a href="analytics.php">Analytics</a>
+    <a href="javascript:void(0);" onclick="confirmLogout()">Logout</a>
+</nav>
+

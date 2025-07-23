@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <!-- Link to local Bootstrap CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="Photos/dinner.png" type="image/png">
+    <link href="CSS/home.css" rel="stylesheet">
+    <style>
+        /* Custom styles for the forgot password page */
+        body {
+            background: linear-gradient(to bottom, #1d1d1d, #fafafa);
+            font-size: 20px;
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .forgot-password-container {
+            max-width: 400px;
+            padding: 2rem;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+        .form-control {
+            margin-bottom: 1rem;
+        }
+        .text-center a {
+            font-size: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top" style="background-color: black;padding: 15px 15px;font-size: 15px;width: auto;">
+        <div class="container-fluid">
+            <!-- Brand Logo -->
+            <a class="navbar-brand" href="#" style="color: white;">
+                <img src="Photos/dinner.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top" >
+                Gather
+            </a>
+      
+            <!-- Toggler for Mobile View -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon" style="border-color:grey ;"></span>
+            </button>
+      
+            <!-- Collapsible Navbar Content -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- Left Aligned Links -->
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="bookatable.html" >Book a Table</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="aboutus.html" >About Us</a>
+                    </li>
+                </ul>
+      
+                  <!-- Right Aligned Dropdown Menu -->
+                <!-- <ul class="navbar-nav ms-auto">
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle btn btn-light btn-lg" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black;text-decoration: none;">
+                          Login/Sign Up
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <li><a class="dropdown-item" href="login.html">Admin</a></li>
+                          <li><a class="dropdown-item" href="login.html">Restaurant</a></li>
+                          <li><a class="dropdown-item" href="login.html">Customer</a></li>
+                      </ul>
+                  </li>
+              </ul> -->
+            </div>
+        </div>
+      </nav>
+
+<div class="forgot-password-container">
+    <h2 class="text-center mb-4">Forgot Password</h2>
+    <form id="forgotPasswordForm">
+        <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="email" onsubmit="validateEmail()" placeholder="Enter your email" required>
+        </div>
+        <button type="button" class="btn btn-dark w-100" onclick="sendOTP()">Send OTP</button>
+        <div id="otpMessage" class="text-success mt-3" style="display: none;">OTP sent to your email!</div>
+        
+    </form>
+</div>
+
+<script src="../js/bootstrap.bundle.min.js"></script>
+<script>
+    function validateEmail() {
+        const email = document.getElementById("email").value;
+        const submitBtn = document.getElementById("submitBtn");
+        const error = document.getElementById("error");
+
+        // Regular expression: starts with a letter, ends with @gmail.com
+        const emailPattern = /^[A-Za-z][\w.-]*@gmail\.com$/;
+
+        if (emailPattern.test(email)) {
+            submitBtn.disabled = false;
+            submitBtn.classList.remove("disabled");
+            error.style.display = "none";
+        } else {
+            submitBtn.disabled = true;
+            submitBtn.classList.add("disabled");
+            error.style.display = "block";
+        }
+    }
+</script>
+
+
+</body>
+</html>

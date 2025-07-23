@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="CSS/dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            
+            <!-- Sidebar -->
+            <nav class="col-md-2 sidebar d-flex flex-column">
+                <h4 class="text-center">Admin Dashboard</h4>
+                <a href="admin.html">Dashboard</a>
+                <a href="users.html">Manage Users</a>
+                <a href="rest.html">Manage Restaurants</a>
+                <a href="reservation.html">Reservations</a>
+                <a href="feedback.html">Feedback</a>
+                <a href="analytics.html">Analytics</a>
+                <a href="#logout">Logout</a>
+            </nav>
+
+            <!-- Main Content -->
+            <main class="col-md-10 main-content">
+                <div class="page-header">
+                    <h3>Welcome to Admin Dashboard!</h3>
+                </div>
+
+                <!-- Overview Cards -->
+                <div class="row mt-4">
+                    <div class="col-md-3">
+                        <div class="card bg-primary text-white">
+                            <div class="card-body">
+                                <h5>Total Users</h5>
+                                <h3>150</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card bg-success text-white">
+                            <div class="card-body">
+                                <h5>Total Reservations</h5>
+                                <h3>320</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card bg-warning text-white">
+                            <div class="card-body">
+                                <h5>Total Feedback</h5>
+                                <h3>45</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card bg-danger text-white">
+                            <div class="card-body">
+                                <h5>Total Restaurants</h5>
+                                <h3>20</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Manage Sections -->
+                <div class="row mt-5">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5>Recent Reservations</h5>
+                            </div>
+                            <div class="card-body">
+                                <ul>
+                                    <li>Reservation at Pizza Place for 2 at 7:00 PM</li>
+                                    <li>Reservation at Café Bliss for 4 at 8:30 PM</li>
+                                    <li>Reservation at Burger Shack for 3 at 6:45 PM</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5>Recent Feedback</h5>
+                            </div>
+                            <div class="card-body">
+                                <ul>
+                                    <li>Pizza Place: "Great food, fast service!"</li>
+                                    <li>Café Bliss: "Very friendly staff."</li>
+                                    <li>Burger Shack: "Loved the burgers, will come back."</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Manage Users Section -->
+                <div class="row mt-5">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5>Manage Users</h5>
+                            </div>
+                            <div class="card-body">
+                                <ul>
+                                    <li><a href="#addUser">Add New User</a></li>
+                                    <li><a href="#viewUsers">View All Users</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+
+                <!-- Manage Restaurants Section -->
+                <div class="row mt-5">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5>Manage Restaurants</h5>
+                            </div>
+                            <div class="card-body">
+                                <ul>
+                                    <li><a href="#addRestaurant">Add New Restaurant</a></li>
+                                    <li><a href="#viewRestaurants">View All Restaurants</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+    </div>
+    <button class="navbar-toggler d-md-none" type="button" id="sidebarToggle">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Bootstrap JS -->
+    <script src="../js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Sidebar Toggle Functionality
+        const sidebar = document.getElementById('sidebar');
+        const sidebarToggle = document.getElementById('sidebarToggle');
+
+        sidebarToggle.addEventListener('click', function() {
+            sidebar.classList.toggle('d-none');
+        });
+    </script>
+
+</body>
+</html>

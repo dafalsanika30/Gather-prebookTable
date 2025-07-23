@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Users</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- <link href="CSS/home.css" rel="stylesheet"> -->
+    <link href="CSS/dashboard.css" rel="stylesheet">
+
+    
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <nav class="col-md-2 sidebar d-flex flex-column">
+                <h4 class="text-center">Admin Dashboard</h4>
+                <a href="admin.html">Dashboard</a>
+                <a href="users.html">Manage Users</a>
+                <a href="rest.html">Manage Restaurants</a>
+                <a href="reservation.html">Reservations</a>
+                <a href="feedback.html">Feedback</a>
+                <a href="analytics.html">Analytics</a>
+                <a href="#logout">Logout</a>
+            </nav>
+
+            <!-- Main Content -->
+            <div class="col-md-10 main-content">
+                <div class="page-header">
+                    <h3>Manage Users</h3>
+                </div>
+
+                <!-- User Actions -->
+                <div class="container mt-4">
+                    <div class="mb-3">
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addUserModal">
+                            Add New User
+                        </button>
+                    </div>
+
+                    <!-- User Table -->
+                    <table class="table table-dark table-hover">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Role</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Dynamic rows with PHP integration -->
+                            <tr>
+                                <td>1</td>
+                                <td>John Doe</td>
+                                <td>john@example.com</td>
+                                <td>Admin</td>
+                                <td>
+                                    <button class="btn btn-sm btn-success" data-bs-toggle="modal" data-bs-target="#editUserModal">Edit</button>
+                                    <button class="btn btn-sm btn-danger">Delete</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Add User Modal -->
+                <div class="modal fade" id="addUserModal" tabindex="-1" aria-labelledby="addUserModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="addUserModalLabel">Add New User</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="userName" class="form-label">Name</label>
+                                        <input type="text" class="form-control" id="userName" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="userEmail" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="userEmail" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="userRole" class="form-label">Role</label>
+                                        <select class="form-select" id="userRole">
+                                            <option value="Admin">Admin</option>
+                                            <option value="Customer">Customer</option>
+                                            <option value="Restaurant Owner">Restaurant Owner</option>
+                                        </select>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Save</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Edit User Modal -->
+                <div class="modal fade" id="editUserModal" tabindex="-1" aria-labelledby="editUserModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="editUserModalLabel">Edit User</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="editUserName" class="form-label">Name</label>
+                                        <input type="text" class="form-control" id="editUserName" value="John Doe" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="editUserEmail" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="editUserEmail" value="john@example.com" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="editUserRole" class="form-label">Role</label>
+                                        <select class="form-select" id="editUserRole">
+                                            <option value="Admin">Admin</option>
+                                            <option value="Customer">Customer</option>
+                                            <option value="Restaurant Owner">Restaurant Owner</option>
+                                        </select>
+                                    </div>
+                                    <button type="submit" class="btn btn-success">Update</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/bootstrap.bundle.js"></script>
+</body>
+</html>

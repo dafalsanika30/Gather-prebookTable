@@ -1,0 +1,64 @@
+/* Sidebar Styles */
+@media (max-width: 768px) {
+    .sidebar {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: -250px;
+        transition: left 0.3s ease-in-out;
+    }
+
+    .sidebar.active {
+        left: 0;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .sidebar-toggle {
+        display: block;
+    }
+}
+
+
+/* Main content styling */
+.main-content {
+    padding: 20px;
+}
+
+/* Page header */
+.page-header h3 {
+    margin-top: 20px;
+}
+
+/* Cards for overview stats */
+.card {
+    margin-bottom: 20px;
+}
+
+/* Ensure cards are responsive */
+.card-body {
+    padding: 1.5rem;
+}
+
+.card h5 {
+    font-size: 1.1rem;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+}
+
+/* Manage Users Section */
+.card-body a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.card-body a:hover {
+    text-decoration: underline;
+}
+
+/* Mobile Responsiveness */
+
