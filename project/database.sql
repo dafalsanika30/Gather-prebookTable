@@ -16,7 +16,7 @@ CREATE TABLE restaurants (
     description VARCHAR(500) NOT NULL
 );
 
-DELETE restaurants
+--DELETE restaurants
 
 CREATE TABLE customers (
     id SERIAL PRIMARY KEY,
@@ -97,7 +97,7 @@ ORDER BY
 ALTER TABLE bookings ADD COLUMN customer_started_order BOOLEAN DEFAULT FALSE;
 
 
-SELECT 
+/*SELECT 
     bookings.booking_id,
     bookings.booking_date,
     bookings.booking_time,
@@ -170,3 +170,4 @@ GROUP BY
     customers.last_name, 
     bookings.status, 
     bookings.num_guests;
+*/
