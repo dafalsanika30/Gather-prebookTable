@@ -116,7 +116,7 @@ style="background-image: url(Photos/iamge4.png); margin-top: 0;">
                 echo '<div class="col-md-3 col-sm-6 col-xs-12 mb-4">';
                 echo '    <a href="restaurant.php?id=' .$row['id']. '" style="text-decoration: none; color: inherit;">';
                 echo '        <div class="card">';
-                echo '            <img src="uploads/' . ($row['restaurant_name']) . '_restaurantImage.'.$menuImageExtension.'" class="card-img-top" alt="Restaurant Image" width="500" height="250">';
+                echo '            <img src="/project/uploads/' . ($row['restaurant_name']) . '_restaurantImage.'.$menuImageExtension.'" class="card-img-top" alt="Restaurant Image" width="500" height="250">';
                 echo '            <div class="card-body">';
                 echo '                <h5 class="card-title"><b>' . ($row['restaurant_name']) . '</b></h5>';
                 echo '                <h6 class="card-text" style="text-transform: capitalize;">' . ($row['description']) . '</h6>';
@@ -144,5 +144,6 @@ style="background-image: url(Photos/iamge4.png); margin-top: 0;">
 <!-- Footer Section -->
         <?php include "footer.php"; ?>
 </body>
+
 
 </html>
